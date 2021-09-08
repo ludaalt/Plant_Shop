@@ -1,0 +1,63 @@
+$white-color: #ffffff;
+$green-color: #156963;
+$dark-color: #2C1500;
+
+$dark-gray-color: #333333;
+$light-gray-color: #F2F2F2;
+
+$nunito-font-stack: 'Nunito Bold', 'Arial', sans-serif;
+$montserrat-font-stack: 'Montserrat Medium', 'Arial', sans-serif;  
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-content {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1280px) {
+    .main-content {
+        width: 100%; 
+    }
+}
+
+.container {
+    max-width: 1168px;
+    margin: 0 auto;
+}
+
+%flex-center {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+%flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+%button {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+@mixin font-pack($font-family, $weight, $size, $line-height, $color: 'black') {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line-height;
+    color: $color;
+}
+
+@mixin background-pack($image, $repeat, $position: 0% 0%) {
+    background-image: url($image);
+    background-repeat: $repeat;
+    background-position: $position;
+}

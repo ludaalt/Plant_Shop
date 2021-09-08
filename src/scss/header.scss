@@ -1,0 +1,221 @@
+@import 'main';
+
+.header {
+    position: relative;
+    border: 1px solid transparent;
+
+    &::after {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 610px;
+        content: '';
+        @include background-pack('../img/header-bg.png', no-repeat);
+    }
+}
+
+.navigation {
+    margin-top: 30px;
+    @extend %flex-center;
+}
+
+.user-panel {
+    @extend %flex-center;
+
+    .button {
+        @extend %button;
+        padding: 8px 30px; 
+        text-align: center;       
+
+        @include font-pack($nunito-font-stack, bold, 14px, 20px, $green-color);              
+
+        &-active{
+            background-color: $green-color;
+            color: $white-color;
+        }
+
+        &:hover {
+            background-color: $green-color;
+            color: $white-color;
+            opacity: 0.7;
+        }
+    }
+
+    .icon {
+        @extend %button;
+        padding: 20px;
+
+        &:hover {
+            opacity: 0.6;
+            transform: scale(1.1);
+        }
+    }
+
+    .search {
+        @include background-pack('./img/search-logo.svg', no-repeat, center);
+    }
+
+    .cart {
+        margin-left: 20px;
+        @include background-pack('./img/cart-logo.svg', no-repeat, center);
+    }
+}
+
+.description-wrap {
+    @extend %flex-end;
+
+    .description {
+        margin-top: 110px;
+        max-width: 47%;
+    }
+}
+
+
+.main-title {
+    max-width: 520px;
+    @include font-pack($montserrat-font-stack, 500, 68px, 83px, $green-color);    
+}
+
+.main-description {
+    max-width: 500px;
+    margin-bottom: 100px;
+    margin-top: 22px;
+      
+    @include font-pack($montserrat-font-stack, normal, 18px, 32px, $dark-color);
+    opacity: 0.8;
+}
+
+.display-button {
+    @extend %button;
+    position: relative;
+    padding: 83px 38px 38px;
+    @include font-pack($montserrat-font-stack, 500, 32px, 39px, $green-color);
+
+    &::before {
+        position: absolute;    
+        @include font-pack($montserrat-font-stack, 500, 24px, 29px);    
+        min-width: 100px;
+        height: 50px;
+        top: 40px;
+    }
+    
+    &-back::before {
+        @include background-pack('./img/arrow-back.svg', no-repeat);    
+        content: 'Previous';
+        color: $dark-gray-color;
+        padding-left: 40px;
+    }
+    
+    &-next::before {
+        @include background-pack('./img/arrow-next.svg', no-repeat, top right);    
+        content: 'Next';
+        color: $light-gray-color;
+        text-align: start;
+    }
+
+
+    &-active {
+        background-color: $green-color;
+        color: $white-color;
+    }
+
+    &:hover {
+        background-color: $green-color;
+        color: $white-color;
+        opacity: 0.7;
+    }
+}
+
+
+
+
+@media screen and (max-width: 1270px) {
+    .header {
+        &::after {
+            opacity: 0.6;
+        }
+    }
+
+    .navigation {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    .description-wrap { 
+        .description {
+            max-width: 100%;
+        }
+    }   
+    
+    .main-description {
+        color: #000;
+        opacity: 1;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .header {
+        &::after {
+            width: 100%;
+            background-size: cover;
+        }
+    }    
+}
+
+@media screen and (max-width: 600px) {
+    .display-button {
+        padding: 65px 20px 25px 20px;
+        width: calc(50% - 2px);
+
+        font-size: 25px;
+    }
+
+    .description-wrap {
+        .description {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 445px) {
+    .navigation {
+        flex-wrap: wrap;
+
+        .user-panel {
+            width: 100%;
+        }
+    }
+
+    .display-button {
+        padding: 55px 0px 20px;
+        font-size: 20px;
+
+        &::before {
+            font-size: 17px;
+            top: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .user-panel {
+        flex-wrap: wrap;
+
+        .button {
+            width: 75%;
+            margin: 10px auto;
+
+            &:nth-child(3) {
+            border: 2px solid $green-color;
+            }
+        }
+    }
+
+    .main-title {
+        font-size: 45px;
+        line-height: 65px;
+    }
+}
