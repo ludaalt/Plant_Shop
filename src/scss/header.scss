@@ -2,6 +2,7 @@
 
 .navigation {
     position: absolute;
+    z-index: 100;
     margin: 0 auto;
     top: 30px;
     width: 100%;
@@ -112,6 +113,10 @@
     }
 }
 
+.image-nonactive {
+    display: none;
+}
+
 
 @media screen and (max-width: 1270px) {
     .navigation {
@@ -146,12 +151,21 @@
 
     .description-wrap { 
         justify-content: flex-end;
+
+        .description {
+            padding-right: 20px;
+            padding-bottom: 80px;
+        }
     }   
     
     .main-description {
         color: $black-color;
         opacity: 1;
         font-weight: bold;
+    }
+
+    .display-button {
+        display: none;
     }
 }
 
@@ -165,13 +179,6 @@
 }
 
 @media screen and (max-width: 600px) {
-    .display-button {
-        padding: 65px 20px 25px 20px;
-        width: calc(50% - 2px);
-
-        font-size: 25px;
-    }
-
     .description-wrap {
         .description {
             width: 100%;
@@ -189,16 +196,6 @@
         .user-panel {
             justify-content: flex-end;
             width: 100%;
-        }
-    }
-
-    .display-button {
-        padding: 55px 0px 20px;
-        font-size: 20px;
-
-        &::before {
-            font-size: 17px;
-            top: 20px;
         }
     }
 }
