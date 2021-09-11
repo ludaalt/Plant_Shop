@@ -1,0 +1,88 @@
+@import 'main';
+
+footer {
+    margin-top: 80px;
+    border-top: 1px solid rgba(21, 105, 99, 0.3);
+
+    .container {
+        padding: 60px 110px;
+        @extend %flex-between;
+    }
+
+    .store-name {
+        h3 {     
+            @include font-pack($poppins-font-stack, 500, 24px, 24px, $green-color);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        h4 {
+            margin: 24px 0 10px;
+            @include font-pack($worksans-font-stack, 500, 16px, 19px, $dark-gray-color);   
+        }
+
+        p {
+            max-width: 282px;
+            @include font-pack($worksans-font-stack, normal, 13px, 20px, #4F4F4F); 
+        }
+    }
+
+    .footer-list {
+        ul {
+            li {
+                margin-bottom: 14px;
+                @include font-pack($worksans-font-stack, 500, 14px, 16px, $black-color);
+            }
+        }
+    }
+
+    .footer-list h4,
+    .footer-form h4 {
+        margin-bottom: 20px;
+        @include font-pack($worksans-font-stack, bold, 16px, 16px, $black-color);
+    }
+
+    .footer-form {
+        input {
+            width: 100%;
+            padding: 8px 13px;
+            border: 1px solid #F2F2F2;
+
+            ::placeholder {
+                @include font-pack($worksans-font-stack, 500, 12px, 16px, $black-color);
+                opacity: 0.5;
+            }
+        }
+
+        button {
+            @extend %button;
+            padding: 4px 12px;
+            margin-top: 14px;
+            background-color: $green-color;
+            border-radius: 2px;
+            @include font-pack($worksans-font-stack, 500, 8px, 14px, $white-color);            
+            text-transform: capitalize;
+        }
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    footer {
+        .container {
+            padding: 20px 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 890px) {
+    footer {
+        .container {
+            flex-direction: column;
+        }
+
+        .footer-list, 
+        .footer-form {
+            margin-top: 30px;
+        }
+    }
+}

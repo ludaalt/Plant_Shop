@@ -5,14 +5,22 @@ $dark-color: #2C1500;
 
 $dark-gray-color: #333333;
 $light-gray-color: #F2F2F2;
+$gray-color: #E0E0E0;
 
 $nunito-font-stack: 'Nunito Bold', 'Arial', sans-serif;
-$montserrat-font-stack: 'Montserrat Medium', 'Arial', sans-serif;  
+$montserrat-font-stack: 'Montserrat Medium', 'Arial', sans-serif;
+$poppins-font-stack: 'Poppins Regular', 'Arial', sans-serif; 
+$worksans-font-stack: 'Worksans Regular', 'Arial', sans-serif;  
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
 
 ul {
@@ -51,6 +59,12 @@ ul {
     align-items: center;
 }
 
+%flex-column-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 %button {
     display: inline-block;
     cursor: pointer;
@@ -58,7 +72,7 @@ ul {
     background: none;
 }
 
-@mixin font-pack($font-family, $weight, $size, $line-height, $color: 'black') {
+@mixin font-pack($font-family, $weight, $size, $line-height, $color: $black-color) {
     font-family: $font-family;
     font-weight: $weight;
     font-size: $size;

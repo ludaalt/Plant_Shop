@@ -1,0 +1,55 @@
+@import 'main';
+
+.cards-title {
+    @extend %flex-between;
+    border-bottom: 1px solid $gray-color;
+    padding-bottom: 16px;
+
+    h2 {
+        @include font-pack($montserrat-font-stack, 500, 20px, 24px);
+    }
+
+    select {
+        padding: 8px 12px;
+
+        @include font-pack($montserrat-font-stack, 500, 12px, 15px);
+    }
+}
+
+.cards-list {
+    margin-top: 25px;
+    @extend %flex-between;
+
+    li {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            order: -1;
+        }
+
+        h3 {
+            @include font-pack($montserrat-font-stack, normal, 16px, 20px);
+            margin: 10px 0;
+        }
+
+        p {
+            @include font-pack($montserrat-font-stack, 600, 16px, 20px);
+        }
+    }
+}
+
+@media screen and (max-width: 1190px) {
+    .cards {
+        .container {
+            width: 95%;
+
+            ul {
+                flex-wrap: wrap;
+                justify-content: space-around;        
+            }
+        }
+    }
+}
