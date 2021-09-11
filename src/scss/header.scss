@@ -42,12 +42,12 @@
     }
 
     .search {
-        @include background-pack('./img/search-logo.svg', no-repeat, center);
+        @include background-pack('./img/icons/search-logo.svg', no-repeat, center);
     }
 
     .cart {
         margin-left: 20px;
-        @include background-pack('./img/cart-logo.svg', no-repeat, center);
+        @include background-pack('./img/icons/cart-logo.svg', no-repeat, center);
     }
 }
 
@@ -88,14 +88,14 @@
     }
     
     &-back::before {
-        @include background-pack('./img/arrow-back.svg', no-repeat);    
+        @include background-pack('./img/icons/arrow-back.svg', no-repeat);    
         content: 'Previous';
         color: $dark-gray-color;
         padding-left: 40px;
     }
     
     &-next::before {
-        @include background-pack('./img/arrow-next.svg', no-repeat, top right);    
+        @include background-pack('./img/icons/arrow-next.svg', no-repeat, top right);    
         content: 'Next';
         color: $light-gray-color;
         text-align: start;

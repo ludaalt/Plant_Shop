@@ -15,15 +15,13 @@ $montserrat-font-stack: 'Montserrat Medium', 'Arial', sans-serif;
     box-sizing: border-box;
 }
 
+ul {
+    list-style: none;
+}
+
 .main-content {
     max-width: 1280px;
     margin: 0 auto;
-}
-
-@media screen and (max-width: 1280px) {
-    .main-content {
-        width: 100%; 
-    }
 }
 
 .container {
@@ -46,6 +44,11 @@ $montserrat-font-stack: 'Montserrat Medium', 'Arial', sans-serif;
 %flex-between {
     display: flex;
     justify-content: space-between;
+}
+
+%flex-center {
+    display: flex;
+    align-items: center;
 }
 
 %button {
