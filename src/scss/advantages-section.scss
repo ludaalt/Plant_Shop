@@ -1,0 +1,70 @@
+@import 'main';
+
+.advantages {
+    margin-top: 140px;
+    margin-bottom: 70px;
+
+    ul {
+        @extend %flex-between;
+
+        li {
+            margin-bottom: 10px;
+            padding: 22px 12px;
+            border: 1px solid #E0E0E0;
+
+            h2 {
+                @include font-pack($montserrat-font-stack, bold, 16px, 24px, $green-color);
+
+                margin-bottom: 16px;
+                max-width: 210px;
+                @extend %flex-center;
+
+                .advantages-icon {
+                    margin-right: 16px;
+
+                    width: 50px;
+                    height: 50px;
+                    display: inline-block;
+
+                    background-size: 100%;
+                }
+            }            
+            
+            p {
+                @include font-pack($montserrat-font-stack, normal, 10px, 16px, $dark-color);
+                max-width: 236px;
+            }
+        }
+    }
+}
+
+$advantages-icon: (
+    delivery: './img/icons/delivery.svg',
+    customer: './img/icons/customer.svg',
+    plants: './img/icons/plants.svg',
+    price: './img/icons/price.svg'   
+);
+
+.icon {
+    @each $name, $icon in $advantages-icon {  
+      &-#{$name} {
+        @include background-pack($icon, no-repeat, center);
+      }
+    }
+}
+
+@media screen and (max-width: 1190px) {
+    .advantages {
+        margin-top: 60px;
+        margin-bottom: 40px;
+
+        .container {
+            width: 95%;
+
+            ul {
+                flex-wrap: wrap;
+                justify-content: space-around;        
+            }
+        }
+    }
+}
