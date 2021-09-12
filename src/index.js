@@ -35,3 +35,82 @@ imageNextButton.addEventListener('click', () => {
     }
 })
 
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add('slide');
+      }
+    });
+});
+
+const advantagesList = document.querySelectorAll('.advantages ul li');
+
+advantagesList.forEach(item => {
+    observer.observe(item);
+})
+
+
+const cardsData = [
+    {
+        id: 1,
+        cardTitle: 'Kaktus Plants',
+        cardPrice: 85.000
+    },
+
+    {
+        id: 2,
+        cardTitle: 'Landak Plants',
+        cardPrice: 105.000
+    },
+
+    {
+        id: 3,
+        cardTitle: 'Kecubung Plants',
+        cardPrice: 85.000
+    },
+
+    {
+        id: 4,
+        cardTitle: 'Kecubung Plants',
+        cardPrice: 85.000
+    },
+
+    {
+        id: 5,
+        cardTitle: 'Kecubung Plants',
+        cardPrice: 85.000
+    }  
+]
+
+
+const select = document.querySelector('.select');
+const cardsList = document.querySelector('.cards-list')
+
+const filterCardsData = () => {
+    let value = select.value;
+
+    if(value == 0) {
+       renderCards(cardsData.sort((prev, next) => prev.cardPrice - next.cardPrice))
+    }
+
+    if(value == 1) {
+        renderCards(cardsData.sort((prev, next) => next.cardPrice - prev.cardPrice))
+    }
+}
+
+select.addEventListener('change', filterCardsData);
+
+const renderCards = (goods) => {
+    cardsList.innerHTML = ''
+    cardsList.innerHTML = goods.map(
+        (item) => `
+        <li>
+            <h3>${item.cardTitle}</h3>
+            <p>IDR ${item.cardPrice}</p>
+            <img src="./img/item${item.id}.jpg" alt="Card ${item.id}">
+        </li>
+    `).join('');
+}
+
+renderCards(cardsData);

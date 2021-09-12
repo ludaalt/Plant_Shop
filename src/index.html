@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <title>Plant Shop</title>
 </head>
 <body>
     <div class="main-content">
@@ -16,10 +16,10 @@
                         <img src="./img/icons/main-logo.svg" alt="Main logo">
                     </a>                    
                     <div class="user-panel">
-                        <button class="icon search" aria-label="search-button"></button>
-                        <button class="icon cart"></button>
-                        <button class="button">Sign Up</button>
-                        <button class="button button-active">Sign In</button>
+                        <button type="button" class="icon search" aria-label="search-button"></button>
+                        <button type="button" class="icon cart"></button>
+                        <button type="button" class="button">Sign Up</button>
+                        <button type="button" class="button button-active">Sign In</button>
                     </div>
                 </div>
             </div>            
@@ -99,38 +99,15 @@
             <div class="div container">            
                 <div class="cards-title">
                     <h2>Featured Plants</h2>
-                    <select>
-                        <option value="Cheaper" disabled selected>Cheaper First
-                        </option>
-                        <option value="Expensive">Expensive First</option>
-                    </select>
+                    <div class="select-wrap">
+                        <select class="select">
+                            <option value="0" selected>Cheaper First
+                            </option>
+                            <option value="1">Expensive First</option>
+                        </select>
+                    </div>
                 </div>
                 <ul class="cards-list">
-                    <li>
-                        <h3>Kaktus Plants</h3>
-                        <p>IDR 85.000</p>
-                        <img src="./img/item1.jpg" alt="Card 1">
-                    </li>
-                    <li>
-                        <h3>Landak Plants</h3>
-                        <p>IDR 105.000</p>
-                        <img src="./img/item2.jpg" alt="Card 2">
-                    </li>
-                    <li>
-                        <h3>Kecubung Plants</h3>
-                        <p>IDR 85.000</p>
-                        <img src="./img/item3.jpg" alt="Card 3">
-                    </li>
-                    <li>
-                        <h3>Kecubung Plants</h3>
-                        <p>IDR 85.000</p>
-                        <img src="./img/item4.jpg" alt="Card 4">
-                    </li>
-                    <li>
-                        <h3>Kecubung Plants</h3>
-                        <p>IDR 85.000</p>
-                        <img src="./img/item5.jpg" alt="Card 5">
-                    </li>
                 </ul>
             </div>
         </section>
@@ -159,7 +136,7 @@
                 <div class="images-section-bottom">
                     <div class="images-section-wrap">
                         <h2>Get your favourites plant on our shop now</h2>
-                        <button>Visit Shop</button>
+                        <a href="#">Visit Shop</a>
                     </div>
                     <img src="./img/section-image3.png" alt="">                    
                 </div>

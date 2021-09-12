@@ -27,6 +27,10 @@ ul {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 .main-content {
     max-width: 1280px;
     margin: 0 auto;
@@ -70,6 +74,12 @@ ul {
     cursor: pointer;
     border: none;
     background: none;
+
+    &:hover {
+        background-color: $green-color;
+        color: $white-color;
+        opacity: 0.7;
+    }
 }
 
 @mixin font-pack($font-family, $weight, $size, $line-height, $color: $black-color) {
@@ -97,5 +107,36 @@ ul {
     }
     to {
         opacity: 1;
+    }
+}
+
+.slide {
+    // transform: scale(0, 0) translateY(0);
+    
+    animation-name: slide;
+    animation-timing-function: ease;
+    animation-duration: 3s;
+    // animation-iteration-count: infinite;
+    
+    &:nth-child(2) {
+        animation-delay: .4s;
+    }
+
+    &:nth-child(3) {
+        animation-delay: .6s;
+    }
+
+    &:nth-child(4) {
+        animation-delay: .8s;
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: scale(0, 0);
+    }
+
+    100% {
+        transform: scale(1, 1);
     }
 }
